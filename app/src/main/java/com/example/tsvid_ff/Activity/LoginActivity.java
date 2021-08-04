@@ -1,10 +1,12 @@
-package com.example.tsvid_ff;
+package com.example.tsvid_ff.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class DangNhap extends AppCompatActivity {
+import com.example.tsvid_ff.R;
+
+public class LoginActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
