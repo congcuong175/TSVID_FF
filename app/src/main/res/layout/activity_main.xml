@@ -108,10 +108,8 @@
                 android:layout_marginEnd="4dp"
                 android:layout_marginRight="4dp"
                 android:layout_marginBottom="32dp"
-
                 android:text="Quên mật khẩu ?"
                 android:textColor="@color/teal_200" />
-
         </RelativeLayout>
 
     </LinearLayout>
@@ -120,7 +118,6 @@
         android:background="#FFC107"
         android:layout_width="150dp"
         android:layout_height="50dp"
-
         android:text="Đăng nhập"
         android:gravity="center"
         android:id="@+id/login"
@@ -136,8 +133,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
+        android:layout_marginBottom="40dp"
         android:textColor="@color/black"
-
         android:text="Điều khoản sử dụng"/>
+
 </LinearLayout>
 
