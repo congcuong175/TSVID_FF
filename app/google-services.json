@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "579061591972",
+    "firebase_url": "https://tsvid-3ef5d-default-rtdb.firebaseio.com",
+    "project_id": "tsvid-3ef5d",
+    "storage_bucket": "tsvid-3ef5d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:579061591972:android:aa57279e9be6612c2fdb31",
+        "android_client_info": {
+          "package_name": "com.example.tsvid_ff"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "579061591972-82olkod7m8fm22kfue482161cr6p9363.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBjps0PghaDW9UrHJSZX-YeXllMwDTYgBE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "579061591972-82olkod7m8fm22kfue482161cr6p9363.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
