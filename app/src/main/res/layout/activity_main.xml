@@ -69,7 +69,7 @@
                     android:layout_height="wrap_content"
                     android:paddingStart="12dp"
                     android:drawablePadding="12dp"
-                    android:hint="mật khẩu"
+                    android:hint="Mật khẩu"
                     android:inputType="textPassword"
                     android:drawableLeft="@drawable/keyon"
                     android:paddingLeft="12dp" />
