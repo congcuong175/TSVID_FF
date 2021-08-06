@@ -2,9 +2,6 @@ package com.example.tsvid_ff.Common;
 
 import com.example.tsvid_ff.Entity.Account;
 import static com.example.tsvid_ff.Activity.LoginActivity.dbContext;
-import java.util.ArrayList;
-import java.util.List;
-
 public class AccountCommon {
     public static String ID_ACCOUNT = "";
     public static int Login(String id, String passwood) {
