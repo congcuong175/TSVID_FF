@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TSVID_FF.NoActionBar">
         <activity
-            android:name=".Activity.DangKy"
+            android:name=".Activity.RegisterActivity"
             android:exported="true" />
         <activity
             android:name=".Activity.LoginActivity"
