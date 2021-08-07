@@ -71,6 +71,13 @@ public class Account {
     public Account(){
        this.permission = false;
     }
+
+    public Account(String id, String password) {
+        this.id = id;
+        this.password = password;
+        this.permission = false;
+    }
+
     public Account(String id, String password, String name, String faculty, String classroom, String scholastic) {
         this.id = id;
         this.password = password;

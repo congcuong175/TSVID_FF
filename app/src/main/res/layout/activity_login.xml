@@ -114,17 +114,18 @@
                 android:textColor="@color/teal_200" />
         </RelativeLayout>
     </LinearLayout>
+
     <TextView
-        android:layout_marginTop="30dp"
-        android:background="#FFC107"
+        android:id="@+id/btn_login_login"
         android:layout_width="150dp"
         android:layout_height="50dp"
-        android:text="Đăng nhập"
+        android:layout_marginTop="30dp"
+        android:background="#FFC107"
         android:gravity="center"
-        android:id="@+id/btn_login_login"
+        android:text="Đăng nhập"
         android:textColor="@color/black"
-        android:textSize="20dp"
-        />
+        android:textSize="20dp" />
+
     <ImageView
         android:id="@+id/btn_finger_login"
         android:layout_marginTop="10dp"

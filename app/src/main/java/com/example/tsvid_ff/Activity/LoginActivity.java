@@ -95,6 +95,7 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
+
     //disable back button
     boolean doubleBackToExitPressedOnce = false;
 

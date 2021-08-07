@@ -9,7 +9,7 @@ public class AccountCommon {
     public static String ID_ACCOUNT = "";
     public static int Login(String id, String passwood) {
         int result = -1;
-        for (Account account : dbContext.accountList()
+        for (Account account : dbContext.getDataAccount()
         ) {
             if (account.getId().equalsIgnoreCase(id.trim()) && account.getPassword().equalsIgnoreCase(passwood.trim()) && account.getPermission() == false){
                 result = 0;
