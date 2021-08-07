@@ -83,7 +83,7 @@ public class RegisterActivity extends AppCompatActivity {
         btn_register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               dbContext.deleteAccount("10119064");
+            dbContext.deleteAccount("1");
             }
         });
 

@@ -102,7 +102,7 @@ public class DBContext {
             public void onChildAdded( DataSnapshot snapshot,  String previousChildName) {
                 if(snapshot.getValue(Account.class).getId().equalsIgnoreCase(id))
                 {
-                    db.removeValue();
+                   snapshot.getRef().removeValue();
                 }
             }
 
