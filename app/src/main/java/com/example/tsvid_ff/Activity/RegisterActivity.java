@@ -1,49 +1,62 @@
 package com.example.tsvid_ff.Activity;
 
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.ImageView;
+import android.widget.Toast;
 
+import com.example.tsvid_ff.Database.DBContext;
+import com.example.tsvid_ff.Entity.Account;
 import com.example.tsvid_ff.R;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
+
+import java.time.LocalDate;
+
 import static com.example.tsvid_ff.Activity.LoginActivity.dbContext;
 
 public class RegisterActivity extends AppCompatActivity {
     Button btn_register;
     TextInputEditText edt_tip_masv,edt_tip_hoten,edt_tip_ngaysinh,edt_tip_nganhhoc,edt_tip_lop,edt_tip_khoahoc;
     ImageView imv_anh;
-    int REQUEST_CODE_IMAGE=1;
+    TextInputLayout edt_noti_id,edt_noti_name,edt_noti_birth,edt_noti_faculty,edt_noti_classroom,edt_noti_scholatics;
+    int REQUEST_CODE_IMAGE=100;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         initView();
         onClick();
-        imv_anh.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                startActivityForResult(intent,REQUEST_CODE_IMAGE);
-            }
-        });
+
     }
     private void initView()
     {
-        edt_tip_masv=findViewById(R.id.edt_masv);
-        edt_tip_hoten=findViewById(R.id.edt_hoten);
-        edt_tip_ngaysinh=findViewById(R.id.edt_ngaysinh);
-        edt_tip_nganhhoc=findViewById(R.id.edt_nganhhoc);
-        edt_tip_lop=findViewById(R.id.edt_lop);
-        edt_tip_khoahoc=findViewById(R.id.edt_khoahoc);
-        btn_register=findViewById(R.id.btnDangky);
-        imv_anh=findViewById(R.id.imv_anh);
+        edt_tip_masv=findViewById(R.id.edt_id_register);
+        edt_tip_hoten=findViewById(R.id.edt_name_register);
+        edt_tip_ngaysinh=findViewById(R.id.dpk_birth_register);
+        edt_tip_nganhhoc=findViewById(R.id.edt_faculty_register);
+        edt_tip_lop=findViewById(R.id.edt_classroom_register);
+        edt_tip_khoahoc=findViewById(R.id.edt_scholatics_register);
+        btn_register=findViewById(R.id.btn_register_register);
+        imv_anh=findViewById(R.id.img_capture_register);
+
+        edt_noti_id = findViewById(R.id.edt_noti_id_register);
+        edt_noti_name = findViewById(R.id.edt_noti_name_register);
+        edt_noti_birth = findViewById(R.id.edt_noti_birth_register);
+        edt_noti_faculty = findViewById(R.id.edt_noti_faculty_register);
+        edt_noti_classroom = findViewById(R.id.edt_noti_classroom_register);
+        edt_noti_scholatics= findViewById(R.id.edt_noti_scholatics_register);
     }
     public  void onClick()
     {
@@ -53,13 +66,49 @@ public class RegisterActivity extends AppCompatActivity {
 
             }
         });
+        imv_anh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                startActivityForResult(intent,REQUEST_CODE_IMAGE);
+            }
+        });
+        edt_tip_ngaysinh.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.O)
+            @Override
+            public void onClick(View v) {
+                setDatePickerDialog();
+            }
+        });
+        btn_register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               dbContext.deleteAccount("10119064");
+            }
+        });
 
     }
+    //show DatePickerDialog
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    private void setDatePickerDialog(){
+        int selectedYear = LocalDate.now().getYear();
+        int selectedMonth = LocalDate.now().getMonthValue();
+        int selectedDay = LocalDate.now().getDayOfMonth();
+        DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                edt_tip_ngaysinh.setText(String.format("%s - %s - %s",dayOfMonth,month,year));
+            }
+        };
+        DatePickerDialog datePickerDialog = new DatePickerDialog(this,dateSetListener,selectedYear,selectedMonth,selectedDay);
+        datePickerDialog.show();
+    }
+    //Capture
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if(requestCode==REQUEST_CODE_IMAGE&&requestCode==RESULT_OK&&data!=null)
-        {
-            Bitmap bitmap= (Bitmap) data.getExtras().get("data");
+
+        if (requestCode == REQUEST_CODE_IMAGE && resultCode == RESULT_OK) {
+            Bitmap bitmap = (Bitmap) data.getExtras().get("data");
             imv_anh.setImageBitmap(bitmap);
         }
         super.onActivityResult(requestCode, resultCode, data);

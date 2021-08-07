@@ -61,7 +61,7 @@ public class DBContext {
     }
     public void addAccount(Account acc){
         DatabaseReference db= FirebaseDatabase.getInstance().getReference();
-        db.child("Account").setValue(acc);
+        db.child("Account").push().setValue(acc);
     }
     public void updateAccountpassword(String id,String newpassword){
         DatabaseReference db= FirebaseDatabase.getInstance().getReference("Account");
@@ -96,13 +96,13 @@ public class DBContext {
         });
     }
     public void deleteAccount(String id){
-        DatabaseReference db= FirebaseDatabase.getInstance().getReference("Account");
+        DatabaseReference db= FirebaseDatabase.getInstance().getReference();
         db.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded( DataSnapshot snapshot,  String previousChildName) {
                 if(snapshot.getValue(Account.class).getId().equalsIgnoreCase(id))
                 {
-                    db.setValue(null);
+                   db.removeValue();
                 }
             }
 

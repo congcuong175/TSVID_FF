@@ -40,12 +40,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp">
-
-                    <ImageView
-                        android:id="@+id/imv_anh"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                            android:background="@drawable/vien" />
+                    <androidx.cardview.widget.CardView
+                        app:cardCornerRadius="30dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:src="@drawable/ic_camera"
+                            android:id="@+id/img_capture_register"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:scaleType="centerCrop"/>
+                    </androidx.cardview.widget.CardView>
 
                     <TextView
                         android:layout_width="match_parent"
@@ -66,11 +71,12 @@
                 android:orientation="vertical">
 
                 <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/edt_noti_id_register"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/edt_masv"
+                        android:id="@+id/edt_id_register"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@color/white"
@@ -79,11 +85,12 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/edt_noti_name_register"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/edt_hoten"
+                        android:id="@+id/edt_name_register"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@color/white"
@@ -92,11 +99,12 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/edt_noti_birth_register"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
-
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/edt_ngaysinh"
+                        android:inputType="datetime"
+                        android:id="@+id/dpk_birth_register"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@color/white"
@@ -105,11 +113,12 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/edt_noti_faculty_register"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/edt_nganhhoc"
+                        android:id="@+id/edt_faculty_register"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@color/white"
@@ -118,24 +127,26 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/edt_noti_classroom_register"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/edt_lop"
+                        android:id="@+id/edt_classroom_register"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@color/white"
                         android:drawableEnd="@drawable/butchi1"
-                        android:hint="Lớp" />
+                        android:hint="Lớp"/>
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/edt_noti_scholatics_register"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/edt_khoahoc"
+                        android:id="@+id/edt_scholatics_register"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@color/white"
@@ -144,14 +155,13 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <Button
-                    android:id="@+id/btnDangky"
+                    android:id="@+id/btn_register_register"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="20dp"
                     android:backgroundTint="#2196F3"
                     android:text="Đăng ký" />
-
             </LinearLayout>
 
         </LinearLayout>
