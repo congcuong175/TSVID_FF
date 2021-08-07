@@ -16,12 +16,17 @@ import android.widget.DatePicker;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.tsvid_ff.Common.CheckInternetConnection;
 import com.example.tsvid_ff.Common.ValidateData;
 import com.example.tsvid_ff.Database.DBContext;
 import com.example.tsvid_ff.Entity.Account;
 import com.example.tsvid_ff.R;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.time.LocalDate;
 
@@ -65,6 +70,7 @@ public class RegisterActivity extends AppCompatActivity {
         btn_register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 edt_noti_id.setError("");
                 edt_noti_name.setError("");
                 edt_noti_birth.setError("");
@@ -92,8 +98,14 @@ public class RegisterActivity extends AppCompatActivity {
                 }
                 if (!ValidateData.checkEmpty(edt_tip_khoahoc.getText().toString())) {
                     edt_noti_scholatics.setError("Năm học không được để trống");
-                }else{
-                    Toast.makeText(getApplicationContext(),"Thành công",Toast.LENGTH_LONG).show();
+                } else {
+                    if(CheckInternetConnection.isNetworkConnected(getApplicationContext())){
+                        Account account = new Account(edt_tip_masv.getText().toString(), edt_tip_masv.getText().toString(), edt_tip_hoten.getText().toString(), edt_tip_nganhhoc.getText().toString(), edt_tip_lop.getText().toString(), edt_tip_khoahoc.getText().toString(), "");
+                        dbContext.addAccount(account,getApplicationContext());
+                    }else {
+                        Toast.makeText(getApplicationContext(),"Đăng ký không thành công, kiểm tra kết nối internet",Toast.LENGTH_LONG).show();
+                    }
+
                 }
             }
         });
@@ -113,7 +125,6 @@ public class RegisterActivity extends AppCompatActivity {
         });
 
     }
-
 
 
     //show DatePickerDialog

@@ -1,11 +1,18 @@
 package com.example.tsvid_ff.Database;
 
+import android.content.Context;
+import android.content.Intent;
+import android.os.CountDownTimer;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+
+import com.example.tsvid_ff.Activity.LoginActivity;
 import com.example.tsvid_ff.Activity.RegisterActivity;
 import com.example.tsvid_ff.Entity.Account;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -50,19 +57,16 @@ public class DBContext {
         return accounts;
     }
 
-    public int addAccount(Account acc){
+    public void addAccount(Account acc,Context context){
         DatabaseReference db= FirebaseDatabase.getInstance().getReference();
-        kt=0;
-        db.child("Account").push().setValue(acc, new DatabaseReference.CompletionListener() {
+        db.child("Account").push().setValue(acc).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
-            public void onComplete( DatabaseError error,  DatabaseReference ref) {
-                if(error ==null)
-                {
-                    kt=1;
+            public void onComplete(Task<Void> task) {
+                if(task.isSuccessful()){
+                    Toast.makeText(context,"Thành công",Toast.LENGTH_LONG).show();
                 }
             }
         });
-        return  kt;
     }
     public int updateAccountInfor(Account acc)
     {
