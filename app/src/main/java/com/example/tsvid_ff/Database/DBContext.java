@@ -63,10 +63,68 @@ public class DBContext {
         DatabaseReference db= FirebaseDatabase.getInstance().getReference();
         db.child("Account").setValue(acc);
     }
-    public void updateAccount(){
+    public void updateAccountpassword(String id,String newpassword){
+        DatabaseReference db= FirebaseDatabase.getInstance().getReference("Account");
+        db.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded( DataSnapshot snapshot,  String previousChildName) {
+                if(snapshot.getValue(Account.class).getId().equalsIgnoreCase(id))
+                {
+                    db.child("password").setValue(newpassword);
+                }
+            }
 
+            @Override
+            public void onChildChanged( DataSnapshot snapshot,  String previousChildName) {
+
+            }
+
+            @Override
+            public void onChildRemoved( DataSnapshot snapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved( DataSnapshot snapshot,  String previousChildName) {
+
+            }
+
+            @Override
+            public void onCancelled( DatabaseError error) {
+
+            }
+        });
     }
-    public void deleteAccount(){
+    public void deleteAccount(String id){
+        DatabaseReference db= FirebaseDatabase.getInstance().getReference("Account");
+        db.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded( DataSnapshot snapshot,  String previousChildName) {
+                if(snapshot.getValue(Account.class).getId().equalsIgnoreCase(id))
+                {
+                    db.setValue(null);
+                }
+            }
 
+            @Override
+            public void onChildChanged( DataSnapshot snapshot,  String previousChildName) {
+
+            }
+
+            @Override
+            public void onChildRemoved( DataSnapshot snapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved( DataSnapshot snapshot,  String previousChildName) {
+
+            }
+
+            @Override
+            public void onCancelled( DatabaseError error) {
+
+            }
+        });
     }
 }
