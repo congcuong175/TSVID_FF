@@ -96,13 +96,13 @@ public class DBContext {
         });
     }
     public void deleteAccount(String id){
-        DatabaseReference db= FirebaseDatabase.getInstance().getReference();
+        DatabaseReference db= FirebaseDatabase.getInstance().getReference("Account");
         db.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded( DataSnapshot snapshot,  String previousChildName) {
                 if(snapshot.getValue(Account.class).getId().equalsIgnoreCase(id))
                 {
-                   db.removeValue();
+                    db.removeValue();
                 }
             }
 
