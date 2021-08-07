@@ -16,6 +16,7 @@ import android.widget.DatePicker;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.tsvid_ff.Common.ValidateData;
 import com.example.tsvid_ff.Database.DBContext;
 import com.example.tsvid_ff.Entity.Account;
 import com.example.tsvid_ff.R;
@@ -80,13 +81,21 @@ public class RegisterActivity extends AppCompatActivity {
                 setDatePickerDialog();
             }
         });
-        btn_register.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-            dbContext.deleteAccount("1");
-            }
-        });
 
+    }
+    private void checkValidate(){
+        if(!ValidateData.checkUniqueID(edt_tip_masv.getText().toString())){
+            edt_noti_id.setError("Mã sinh viên đã tồn tại");
+        }
+        if(!ValidateData.checkEmpty(edt_tip_masv.getText().toString())){
+            edt_noti_id.setError("Mã sinh viên không được để trống");
+        }
+        if(!ValidateData.checkEmpty(edt_tip_hoten.getText().toString())){
+            edt_noti_name.setError("Họ tên không được để trống");
+        }
+        if(!ValidateData.checkEmpty(edt_tip_ngaysinh.getText().toString())){
+            edt_noti_name.setError("Họ tên không được để trống");
+        }
     }
     //show DatePickerDialog
     @RequiresApi(api = Build.VERSION_CODES.O)

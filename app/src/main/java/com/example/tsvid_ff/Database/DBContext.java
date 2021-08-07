@@ -47,18 +47,7 @@ public class DBContext {
         });
         return accounts;
     }
-    public boolean Unique(String id)
-    {
-        ArrayList<Account> accounts=getDataAccount();
-        for (Account acc:accounts
-             ) {
-            if(acc.getId().equalsIgnoreCase(id))
-            {
-                return false;
-            }
-        }
-        return true;
-    }
+
     public void addAccount(Account acc){
         DatabaseReference db= FirebaseDatabase.getInstance().getReference();
         db.child("Account").push().setValue(acc);
