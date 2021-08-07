@@ -77,7 +77,7 @@ public class DBContext {
             public void onChildAdded( DataSnapshot snapshot,  String previousChildName) {
                 if(snapshot.getValue(Account.class).getId().equalsIgnoreCase(acc.getId()))
                 {
-                    snapshot.getRef().child("name").setValue(acc.getName(), new DatabaseReference.CompletionListener() {
+                    snapshot.getRef().setValue(acc, new DatabaseReference.CompletionListener() {
                         @Override
                         public void onComplete( DatabaseError error,  DatabaseReference ref) {
                             if(error==null)
