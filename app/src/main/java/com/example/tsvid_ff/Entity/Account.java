@@ -2,7 +2,7 @@ package com.example.tsvid_ff.Entity;
 
 public class Account {
     private String id, password, name, faculty, classroom, scholastic, image;
-    private boolean permission;
+    private String permission;
 
     public String getId() {
         return id;
@@ -60,35 +60,18 @@ public class Account {
         this.image = image;
     }
 
-    public boolean getPermission() {
+    public String getPermission() {
         return permission;
     }
 
-    public void setPermission(boolean permission) {
+    public void setPermission(String permission) {
         this.permission = permission;
     }
 
     public Account(){
-       this.permission = false;
-    }
 
-    public Account(String id, String password) {
-        this.id = id;
-        this.password = password;
-        this.permission = false;
     }
-
-    public Account(String id, String password, String name, String faculty, String classroom, String scholastic) {
-        this.id = id;
-        this.password = password;
-        this.name = name;
-        this.faculty = faculty;
-        this.classroom = classroom;
-        this.scholastic = scholastic;
-        this.permission = false;
-    }
-
-    public Account(String id, String password, String name, String faculty, String classroom, String scholastic, String image) {
+    public Account(String id, String password, String name, String faculty, String classroom, String scholastic,String permission, String image) {
         this.id = id;
         this.password = password;
         this.name = name;
@@ -96,6 +79,6 @@ public class Account {
         this.classroom = classroom;
         this.scholastic = scholastic;
         this.image = image;
-        this.permission = false;
+        this.permission = permission;
     }
 }

@@ -100,7 +100,7 @@ public class RegisterActivity extends AppCompatActivity {
                     edt_noti_scholatics.setError("Năm học không được để trống");
                 } else {
                     if(CheckInternetConnection.isNetworkConnected(getApplicationContext())){
-                        Account account = new Account(edt_tip_masv.getText().toString(), edt_tip_masv.getText().toString(), edt_tip_hoten.getText().toString(), edt_tip_nganhhoc.getText().toString(), edt_tip_lop.getText().toString(), edt_tip_khoahoc.getText().toString(), "");
+                        Account account = new Account(edt_tip_masv.getText().toString(), edt_tip_masv.getText().toString(), edt_tip_hoten.getText().toString(), edt_tip_nganhhoc.getText().toString(), edt_tip_lop.getText().toString(), edt_tip_khoahoc.getText().toString(),"false", "");
                         dbContext.addAccount(account,getApplicationContext());
                     }else {
                         Toast.makeText(getApplicationContext(),"Đăng ký không thành công, kiểm tra kết nối internet",Toast.LENGTH_LONG).show();

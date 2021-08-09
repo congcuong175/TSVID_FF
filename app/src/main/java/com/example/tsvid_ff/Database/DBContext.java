@@ -32,7 +32,8 @@ public class DBContext {
         db.child("Account").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded( DataSnapshot snapshot, String previousChildName) {
-                accounts.add(snapshot.getValue(Account.class));
+                Account acc=snapshot.getValue(Account.class);
+                accounts.add(acc);
             }
 
             @Override

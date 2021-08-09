@@ -16,9 +16,17 @@ import android.widget.Toast;
 import com.example.tsvid_ff.Common.AccountCommon;
 import com.example.tsvid_ff.Common.ValidateData;
 import com.example.tsvid_ff.Database.DBContext;
+import com.example.tsvid_ff.Entity.Account;
 import com.example.tsvid_ff.R;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.ArrayList;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -29,14 +37,45 @@ public class LoginActivity extends AppCompatActivity {
     ImageView btn_finger;
     TextView btn_privacy;
     public static DBContext dbContext;
+    ArrayList<Account>accounts;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        accounts=new ArrayList<>();
         dbContext = new DBContext();
-        initView();
+         initView();
         onClick();
-    }
+        DatabaseReference db= FirebaseDatabase.getInstance().getReference();
+        db.child("Account").addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot snapshot, String previousChildName) {
+                String acc=snapshot.getValue(Account.class).getName();
+                Toast.makeText(LoginActivity.this,acc,Toast.LENGTH_SHORT).show();
+
+            }
+
+            @Override
+            public void onChildChanged( DataSnapshot snapshot, String previousChildName) {
+
+            }
+
+            @Override
+            public void onChildRemoved( DataSnapshot snapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved( DataSnapshot snapshot, String previousChildName) {
+
+            }
+
+            @Override
+            public void onCancelled( DatabaseError error) {
+
+            }
+        });
+        }
 
     //initView
     private void initView() {

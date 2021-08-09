@@ -22,7 +22,7 @@ import com.example.tsvid_ff.R;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
-
+import static com.example.tsvid_ff.Activity.LoginActivity.dbContext;
 public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         };
+
         countDownTimer.start();
     }
 

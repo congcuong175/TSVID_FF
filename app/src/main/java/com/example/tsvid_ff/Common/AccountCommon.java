@@ -8,12 +8,12 @@ public class AccountCommon {
         int result = -1;
         for (Account account : dbContext.getDataAccount()
         ) {
-            if (account.getId().equalsIgnoreCase(id.trim()) && account.getPassword().equalsIgnoreCase(passwood.trim()) && account.getPermission() == false){
+            if (account.getId().equalsIgnoreCase(id.trim()) && account.getPassword().equalsIgnoreCase(passwood.trim()) && account.getPermission() == "false"){
                 result = 0;
                 ID_ACCOUNT = account.getId();
             }
 
-            if (account.getId().equalsIgnoreCase(id.trim()) && account.getPassword().equalsIgnoreCase(passwood.trim()) && account.getPermission() == true){
+            if (account.getId().equalsIgnoreCase(id.trim()) && account.getPassword().equalsIgnoreCase(passwood.trim()) && account.getPermission() == "true"){
                 result = 1;
                 ID_ACCOUNT = account.getId();
             }
