@@ -10,6 +10,7 @@ import androidx.annotation.Nullable;
 
 import com.example.tsvid_ff.Activity.LoginActivity;
 import com.example.tsvid_ff.Activity.RegisterActivity;
+import com.example.tsvid_ff.Common.ValidateData;
 import com.example.tsvid_ff.Entity.Account;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -56,17 +57,20 @@ public class DBContext {
         });
         return accounts;
     }
-
+    ValidateData vld=new ValidateData();
     public void addAccount(Account acc,Context context){
         DatabaseReference db= FirebaseDatabase.getInstance().getReference();
-        db.child("Account").push().setValue(acc).addOnCompleteListener(new OnCompleteListener<Void>() {
-            @Override
-            public void onComplete(Task<Void> task) {
-                if(task.isSuccessful()){
-                    Toast.makeText(context,"Thành công",Toast.LENGTH_LONG).show();
+        if(vld.checkEmpty(acc.getId()))
+        {
+            db.child("Account").push().setValue(acc).addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(Task<Void> task) {
+                    if(task.isSuccessful()){
+                        Toast.makeText(context,"Thành công",Toast.LENGTH_LONG).show();
+                    }
                 }
-            }
-        });
+            });
+        }
     }
     public int updateAccountInfor(Account acc)
     {
