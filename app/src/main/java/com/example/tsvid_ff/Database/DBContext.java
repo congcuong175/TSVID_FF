@@ -23,7 +23,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DBContext {
+public class DBContext{
     int kt;
     public ArrayList<Account> getDataAccount()
     {

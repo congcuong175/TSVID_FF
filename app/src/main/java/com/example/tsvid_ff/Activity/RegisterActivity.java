@@ -10,6 +10,7 @@ import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -29,6 +30,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 import static com.example.tsvid_ff.Activity.LoginActivity.dbContext;
 
@@ -45,7 +48,7 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
         initView();
         onClick();
-
+        Threading();
     }
 
     private void initView() {
@@ -66,19 +69,41 @@ public class RegisterActivity extends AppCompatActivity {
         edt_noti_scholatics = findViewById(R.id.edt_noti_scholatics_register);
     }
 
+    List<Account>accountList = new ArrayList<>();
+    public void Threading(){
+        Thread thread = new Thread(){
+            @Override
+            public void run() {
+                while(true){
+                    accountList = dbContext.getDataAccount();
+
+                    try{
+                        Thread.sleep(1000);
+                        if(accountList.size()>0) {
+                            Log.d("TAG", accountList.size()+"");
+                            break;
+                        }
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+
+                }
+            }
+        };
+        thread.start();
+    }
     public void onClick() {
         btn_register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Toast.makeText(getApplicationContext(),accountList.size()+"",Toast.LENGTH_LONG).show();
                 edt_noti_id.setError("");
                 edt_noti_name.setError("");
                 edt_noti_birth.setError("");
                 edt_noti_faculty.setError("");
                 edt_noti_classroom.setError("");
                 edt_noti_scholatics.setError("");
-
-                if (!ValidateData.checkUniqueID(edt_tip_masv.getText().toString())) {
+                if (!ValidateData.checkUniqueID(edt_tip_masv.getText().toString(),accountList)) {
                     edt_noti_id.setError("Mã sinh viên đã tồn tại");
                 }
                 if (!ValidateData.checkEmpty(edt_tip_masv.getText().toString())) {
@@ -99,11 +124,11 @@ public class RegisterActivity extends AppCompatActivity {
                 if (!ValidateData.checkEmpty(edt_tip_khoahoc.getText().toString())) {
                     edt_noti_scholatics.setError("Năm học không được để trống");
                 } else {
-                    if(CheckInternetConnection.isNetworkConnected(getApplicationContext())){
+                    if(CheckInternetConnection.isNetworkConnected(getApplicationContext())&&ValidateData.checkUniqueID(edt_tip_masv.getText().toString(),accountList)){
                         Account account = new Account(edt_tip_masv.getText().toString(), edt_tip_masv.getText().toString(), edt_tip_hoten.getText().toString(), edt_tip_nganhhoc.getText().toString(), edt_tip_lop.getText().toString(), edt_tip_khoahoc.getText().toString(),"false", "");
                         dbContext.addAccount(account,getApplicationContext());
                     }else {
-                        Toast.makeText(getApplicationContext(),"Đăng ký không thành công, kiểm tra kết nối internet",Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(),"Đăng ký không thành công",Toast.LENGTH_LONG).show();
                     }
 
                 }

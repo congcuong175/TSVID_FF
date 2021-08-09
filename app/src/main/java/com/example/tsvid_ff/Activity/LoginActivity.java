@@ -46,35 +46,6 @@ public class LoginActivity extends AppCompatActivity {
         dbContext = new DBContext();
          initView();
         onClick();
-        DatabaseReference db= FirebaseDatabase.getInstance().getReference();
-        db.child("Account").addChildEventListener(new ChildEventListener() {
-            @Override
-            public void onChildAdded(DataSnapshot snapshot, String previousChildName) {
-                String acc=snapshot.getValue(Account.class).getName();
-                Toast.makeText(LoginActivity.this,acc,Toast.LENGTH_SHORT).show();
-
-            }
-
-            @Override
-            public void onChildChanged( DataSnapshot snapshot, String previousChildName) {
-
-            }
-
-            @Override
-            public void onChildRemoved( DataSnapshot snapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved( DataSnapshot snapshot, String previousChildName) {
-
-            }
-
-            @Override
-            public void onCancelled( DatabaseError error) {
-
-            }
-        });
         }
 
     //initView
