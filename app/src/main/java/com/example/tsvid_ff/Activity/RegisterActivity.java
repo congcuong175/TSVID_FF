@@ -41,14 +41,15 @@ public class RegisterActivity extends AppCompatActivity {
     ImageView imv_anh;
     TextInputLayout edt_noti_id, edt_noti_name, edt_noti_birth, edt_noti_faculty, edt_noti_classroom, edt_noti_scholatics;
     int REQUEST_CODE_IMAGE = 100;
-
+    ArrayList<Account>accountList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         initView();
         onClick();
-        Threading();
+        accountList = dbContext.getDataAccount();
+       // Threading();
     }
 
     private void initView() {
@@ -69,29 +70,28 @@ public class RegisterActivity extends AppCompatActivity {
         edt_noti_scholatics = findViewById(R.id.edt_noti_scholatics_register);
     }
 
-    List<Account>accountList = new ArrayList<>();
-    public void Threading(){
-        Thread thread = new Thread(){
-            @Override
-            public void run() {
-                while(true){
-                    accountList = dbContext.getDataAccount();
 
-                    try{
-                        Thread.sleep(1000);
-                        if(accountList.size()>0) {
-                            Log.d("TAG", accountList.size()+"");
-                            break;
-                        }
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-
-                }
-            }
-        };
-        thread.start();
-    }
+//    public void Threading(){
+//        Thread thread = new Thread(){
+//            @Override
+//            public void run() {
+//                while(true){
+//                    accountList = dbContext.getDataAccount();
+//                    try{
+//                        Thread.sleep(1000);
+//                        if(accountList.size()>0) {
+//                            Log.d("TAG", accountList.size()+"");
+//                            break;
+//                        }
+//                    } catch (InterruptedException e) {
+//                        e.printStackTrace();
+//                    }
+//
+//                }
+//            }
+//        };
+//        thread.start();
+//    }
     public void onClick() {
         btn_register.setOnClickListener(new View.OnClickListener() {
             @Override

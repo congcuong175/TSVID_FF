@@ -19,6 +19,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,31 +29,18 @@ public class DBContext{
     public ArrayList<Account> getDataAccount()
     {
         ArrayList<Account> accounts=new ArrayList<>();
-        DatabaseReference db= FirebaseDatabase.getInstance().getReference();
-        db.child("Account").addChildEventListener(new ChildEventListener() {
+        DatabaseReference db= FirebaseDatabase.getInstance().getReference().child("Account");
+        db.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onChildAdded( DataSnapshot snapshot, String previousChildName) {
-                Account acc=snapshot.getValue(Account.class);
-                accounts.add(acc);
+            public void onDataChange(DataSnapshot snapshot) {
+                for (DataSnapshot snapshot1:snapshot.getChildren())
+                {
+                    accounts.add(snapshot1.getValue(Account.class));
+                }
             }
 
             @Override
-            public void onChildChanged( DataSnapshot snapshot, String previousChildName) {
-
-            }
-
-            @Override
-            public void onChildRemoved( DataSnapshot snapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved( DataSnapshot snapshot, String previousChildName) {
-
-            }
-
-            @Override
-            public void onCancelled( DatabaseError error) {
+            public void onCancelled(DatabaseError error) {
 
             }
         });

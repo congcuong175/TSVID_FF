@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -31,6 +32,7 @@ import java.util.ArrayList;
 public class LoginActivity extends AppCompatActivity {
 
     //declare control
+
     TextInputEditText edt_account, edt_password;
     TextInputLayout edt_noti_account,edt_noti_password;
     TextView btn_register, btn_forgot, btn_login;
@@ -42,10 +44,12 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        accounts=new ArrayList<>();
+
         dbContext = new DBContext();
+        accounts=dbContext.getDataAccount();
          initView();
         onClick();
+
         }
 
     //initView
@@ -71,6 +75,7 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         });
+        AccountCommon accountCommon=new AccountCommon();
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -83,7 +88,7 @@ public class LoginActivity extends AppCompatActivity {
                     edt_noti_password.setError("Mật khẩu không được để trống");
                 }
                 if(ValidateData.checkEmpty(edt_account.getText().toString())&&ValidateData.checkEmpty(edt_password.getText().toString())){
-                    int i = AccountCommon.Login(edt_account.getText().toString(),edt_password.getText().toString());
+                    int i = AccountCommon.Login(accounts,edt_account.getText().toString(),edt_password.getText().toString());
                     switch (i){
                         case -1:
                             edt_noti_account.setError("Tài khoản không chính xác");
@@ -104,6 +109,8 @@ public class LoginActivity extends AppCompatActivity {
         });
 
     }
+
+
 
 
     //disable back button
