@@ -18,6 +18,7 @@ import com.example.tsvid_ff.Common.AccountCommon;
 import com.example.tsvid_ff.Common.ValidateData;
 import com.example.tsvid_ff.Database.DBContext;
 import com.example.tsvid_ff.Entity.Account;
+import com.example.tsvid_ff.Home;
 import com.example.tsvid_ff.R;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
@@ -94,7 +95,7 @@ public class LoginActivity extends AppCompatActivity {
                             edt_noti_account.setError("Tài khoản không chính xác");
                             break;
                         case 0:
-                            //login with normal account
+                           startActivity(new Intent(LoginActivity.this, Home.class));
                             break;
                         case 1:
                             //login wiht admintranslator
