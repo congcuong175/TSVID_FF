@@ -3,25 +3,54 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-
     android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context=".Home">
-    <fragment
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
-        android:layout_weight="1"
-        android:id="@+id/f1"
         android:layout_height="match_parent"
-        android:name="com.example.tsvid_ff.TTCN"
-        tools:layout="@layout/fragment_t_t_c_n" />
-    <com.etebarian.meowbottomnavigation.MeowBottomNavigation
-        android:layout_width="match_parent"
-        android:id="@+id/a1"
-        app:mbn_circleColor="#FFAB00"
-        app:mbn_selectedIconColor="@color/white"
-        app:mbn_countTextColor="@color/white"
-        app:mbn_backgroundBottomColor="@color/teal_200"
-        app:mbn_defaultIconColor="@color/white"
-        app:mbn_countBackgroundColor="#FF6D00"
-        android:layout_height="wrap_content"/>
+        android:layout_weight="1"
+        android:fitsSystemWindows="true"
+        tools:openDrawer="end">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+            <androidx.appcompat.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/teal_200"
+                android:id="@+id/tb"/>
+            <fragment
+                android:layout_width="match_parent"
+                android:id="@+id/f1"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:name="com.example.tsvid_ff.TTCN"
+                tools:layout="@layout/fragment_t_t_c_n" />
+            <com.etebarian.meowbottomnavigation.MeowBottomNavigation
+            android:layout_width="match_parent"
+            android:id="@+id/a1"
+            app:mbn_circleColor="#FFAB00"
+            app:mbn_selectedIconColor="@color/white"
+            app:mbn_countTextColor="@color/white"
+            app:mbn_backgroundBottomColor="@color/teal_200"
+            app:mbn_defaultIconColor="@color/white"
+            app:mbn_countBackgroundColor="#FF6D00"
+            android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:fitsSystemWindows="true"
+            app:headerLayout="@layout/nav_header"
+            app:menu="@menu/activity_main_drawer" />
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+
+
 </LinearLayout>
