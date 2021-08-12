@@ -3,35 +3,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <item android:title="Phiên bản 1.1.0">
+    <item android:title="Phiên bản 1.1.1">
         <menu>
             <group android:checkableBehavior="single"
-
                 >
                 <item
-                    android:id="@+id/tc"
-                    android:title="Trang chủ"
+                    android:title="Thông báo"
                    />
                 <item
-                    android:id="@+id/tk"
-                    android:title="Tài khoản"
+                    android:title="Tin tức"
                    />
                 <item
-                    android:id="@+id/setting"
-                    android:title="Chế độ tối"
-                 />
+                    android:title="Cài đặt"
+                    />
+            </group>
+        </menu>
+    </item>
+    <item android:title="">
+        <menu>
+            <group android:checkableBehavior="single"
+                >
                 <item
-                    android:id="@+id/hotro"
-                    android:title="Hỗ trợ"
-                    android:icon="@drawable/ic_baseline_support_agent_24"/>
+
+                    android:title="Đổi mật khẩu"
+                    />
                 <item
-                    android:id="@+id/gioithieu"
-                    android:title="Giới thiệu"
-                  />
-                <item
-                    android:id="@+id/dangxuat"
+
                     android:title="Đăng xuất"
-                  />
+                    />
+
             </group>
         </menu>
     </item>

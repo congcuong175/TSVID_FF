@@ -5,6 +5,9 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.NavigationUI;
 
 import android.os.Bundle;
 import android.view.View;
@@ -24,6 +27,7 @@ public class Home extends AppCompatActivity {
         meowBottomNavigation=findViewById(R.id.a1);
         drawerLayout = findViewById(R.id.drawer_layout);
         toolbar = findViewById(R.id.tb);
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         meowBottomNavigation.add(new MeowBottomNavigation.Model(1,R.drawable.ic_baseline_account_circle_24));
         meowBottomNavigation.add(new MeowBottomNavigation.Model(2, R.drawable.ic_baseline_assignment_24));
         meowBottomNavigation.add(new MeowBottomNavigation.Model(3, R.drawable.ic_baseline_search_24));
@@ -31,26 +35,26 @@ public class Home extends AppCompatActivity {
         meowBottomNavigation.setOnShowListener(new MeowBottomNavigation.ShowListener() {
             @Override
             public void onShowItem(MeowBottomNavigation.Model item) {
-                Fragment fragment=null;
+
                 switch (item.getId()){
                     case 1:
-                        fragment=new TTCN();
+                       navController.navigate(R.id.TTCN);
                         toolbar.setTitle("QUẢNG LÝ CÁ NHÂN");
                         break;
                     case 2:
-                        fragment=new DichVu();
+                        navController.navigate(R.id.dichVu);
                         toolbar.setTitle("DỊCH VỤ");
                         break;
                     case 3:
-                        fragment=new TraCuu();
+                        navController.navigate(R.id.traCuu);
                         toolbar.setTitle("TRA CỨU THÔNG TIN");
                         break;
                     case 4:
-                        fragment=new HoTro();
+                        navController.navigate(R.id.hoTro);
                         toolbar.setTitle("TRUNG TÂM HỖ TRỢ");
                         break;
                 }
-                loadfragmeny(fragment);
+
             }
         });
         meowBottomNavigation.show(1,true);
@@ -63,9 +67,7 @@ public class Home extends AppCompatActivity {
 
     }
 
-    private void loadfragmeny(Fragment fragment) {
-        getSupportFragmentManager().beginTransaction().replace(R.id.f1,fragment).commit();
-    }
+
     public void adads() {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
