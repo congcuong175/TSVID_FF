@@ -22,7 +22,8 @@
         android:theme="@style/Theme.TSVID_FF.NoActionBar">
         <activity
             android:name=".Home"
-            android:exported="true" />
+            android:exported="true"
+            />
         <activity
             android:name=".Activity.RegisterActivity"
             android:exported="true" />

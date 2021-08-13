@@ -1,5 +1,6 @@
 package com.example.tsvid_ff;
 
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -27,6 +28,7 @@ public class TheSinhVien extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         return inflater.inflate(R.layout.fragment_the_sinh_vien, container, false);
     }
 
