@@ -5,176 +5,202 @@
     android:layout_height="match_parent"
 
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".TTCN">
+    tools:context=".Fragment.PersonInfoFragment">
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="vertical"
         android:layout_height="match_parent">
-        <androidx.cardview.widget.CardView
+        <LinearLayout
+            android:layout_margin="20dp"
             android:layout_width="match_parent"
-            android:layout_margin="10dp"
-            app:cardCornerRadius="30dp"
-            android:layout_height="wrap_content">
-            <RelativeLayout
+            android:layout_height="200dp"
+            android:orientation="vertical"
+            android:weightSum="10">
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:background="#FFAB00"
-                android:layout_height="wrap_content">
-                <androidx.cardview.widget.CardView
-                    android:layout_width="90dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginLeft="10dp"
-                    app:cardCornerRadius="30dp"
-                    android:layout_height="90dp">
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@color/black"/>
-                </androidx.cardview.widget.CardView>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="100dp"
-                    android:gravity="center"
-                    android:text="Thẻ sinh viên"
-                    android:textColor="#2962FF"
-                    android:textSize="30sp"
-                    android:textStyle="bold" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_marginLeft="120dp"
-                    android:layout_marginTop="40dp"
-                    android:text="Mã SV :"
-                    android:gravity="center"
-                    android:textStyle="bold"
-                    android:textSize="20sp"
-                    android:textColor="#2962FF"
-                    android:layout_height="wrap_content"/>
+                android:layout_height="match_parent"
+                android:layout_weight="7"
+                android:background="@drawable/border_id_card_top"
+                android:backgroundTint="@color/ic_launcher_background"
+                android:orientation="horizontal"
+                android:weightSum="10">
 
-                <TextView
+                <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="100dp"
-                    android:layout_marginTop="40dp"
-                    android:gravity="center"
-                    android:text="10119096"
-                    android:textColor="#2962FF"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
+                    android:layout_height="match_parent"
+                    android:layout_weight="8"
+                    android:src="@drawable/logofooter" />
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="100dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginBottom="20dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:orientation="vertical"
+                    android:weightSum="2">
 
-                    android:orientation="vertical">
-                    <LinearLayout
+                    <TextView
+                        android:textSize="12sp"
+                        android:textColor="@color/black"
+                        android:gravity="center"
+                        android:text="BỘ GIÁO DỤC VÀ ĐÀO TẠO"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+                    </TextView>
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Họ tên :"
-                            android:textColor="@color/black"
-                            android:textSize="20dp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:text="Đỗ Quang Hào"
-                            android:textColor="@color/black"
-                            android:textSize="20dp" />
-                    </LinearLayout>
-
-                    <LinearLayout
+                    <TextView
+                        android:textSize="12sp"
+                        android:textColor="@color/black"
+                        android:gravity="center_horizontal"
+                        android:text="TRƯỜNG ĐẠI HỌC SPKT HƯNG YÊN"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Ngày sinh :"
-                            android:textColor="@color/black"
-                            android:textSize="20dp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:text="18/08/2001"
-                            android:textColor="@color/black"
-                            android:textSize="20dp" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Ngành học :"
-                            android:textColor="@color/black"
-                            android:textSize="20dp" />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:text="Công Nghệ Thông Tin"
-                            android:textColor="@color/black"
-                            android:textSize="20dp" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Lớp :"
-                            android:textColor="@color/black"
-                            android:textSize="20dp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:text="TK 17.5"
-                            android:textColor="@color/black"
-                            android:textSize="20dp" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="KHóa học :"
-                            android:textColor="@color/black"
-                            android:textSize="20dp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:text="2019-2023"
-                            android:textColor="@color/black"
-                            android:textSize="20dp" />
-                    </LinearLayout>
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+                    </TextView>
                 </LinearLayout>
-            </RelativeLayout>
-        </androidx.cardview.widget.CardView>
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:weightSum="10"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:background="@drawable/border_id_card_bottom"
+                android:backgroundTint="#FBDE45">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="7">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+                        <ImageView
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
+                    <TextView
+                        android:textSize="11sp"
+                        android:textColor="@color/black"
+                        android:gravity="center"
+                        android:text="Mã SV: 10119096"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:weightSum="5"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3">
+                    <LinearLayout
+                        android:layout_weight="4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <TextView
+                            android:textSize="17sp"
+                            android:gravity="center"
+                            android:text="THẺ SINH VIÊN"
+                            android:textColor="#D50000"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:weightSum="10"
+                        android:orientation="horizontal"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_weight="7"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                            <TextView
+                                android:padding="3dp"
+                                android:textSize="12sp"
+                                android:textColor="@color/black"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Họ tên:"/>
+                            <TextView
+                                android:padding="3dp"
+                                android:textSize="12sp"
+                                android:textColor="@color/black"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Ngày sinh:"/>
+                            <TextView
+                                android:padding="3dp"
+                                android:textSize="12sp"
+                                android:textColor="@color/black"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Ngành học:"/>
+                            <TextView
+                                android:padding="3dp"
+                                android:textSize="12sp"
+                                android:textColor="@color/black"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Lớp:"/>
+                            <TextView
+                                android:padding="3dp"
+                                android:textSize="12sp"
+                                android:textColor="@color/black"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Khóa học:"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_weight="3"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                            <TextView
+                                android:padding="3dp"
+                                android:textSize="12sp"
+                                android:textColor="@color/black"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Đỗ Quang Hào"/>
+                            <TextView
+                                android:padding="3dp"
+                                android:textSize="12sp"
+                                android:textColor="@color/black"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="18/08/2001"/>
+                            <TextView
+                                android:padding="3dp"
+                                android:textSize="12sp"
+                                android:textColor="@color/black"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Công nghệ thông tin"/>
+                            <TextView
+                                android:padding="3dp"
+                                android:textSize="12sp"
+                                android:textColor="@color/black"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="TK 17.5"/>
+                            <TextView
+                                android:padding="3dp"
+                                android:textSize="12sp"
+                                android:textColor="@color/black"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="2019-2023"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:orientation="vertical"

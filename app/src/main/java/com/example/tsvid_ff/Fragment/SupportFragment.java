@@ -1,4 +1,4 @@
-package com.example.tsvid_ff;
+package com.example.tsvid_ff.Fragment;
 
 import android.os.Bundle;
 
@@ -8,12 +8,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.tsvid_ff.R;
+
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link HoTro#newInstance} factory method to
+ * Use the {@link SupportFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class HoTro extends Fragment {
+public class SupportFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,7 +26,7 @@ public class HoTro extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public HoTro() {
+    public SupportFragment() {
         // Required empty public constructor
     }
 
@@ -37,8 +39,8 @@ public class HoTro extends Fragment {
      * @return A new instance of fragment HoTro.
      */
     // TODO: Rename and change types and number of parameters
-    public static HoTro newInstance(String param1, String param2) {
-        HoTro fragment = new HoTro();
+    public static SupportFragment newInstance(String param1, String param2) {
+        SupportFragment fragment = new SupportFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);

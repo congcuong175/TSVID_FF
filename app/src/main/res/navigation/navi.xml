@@ -6,27 +6,26 @@
     app:startDestination="@id/TTCN">
     <fragment
         android:id="@+id/TTCN"
-        android:name="com.example.tsvid_ff.TTCN"
+        android:name="com.example.tsvid_ff.Fragment.PersonInfoFragment"
         android:label="fragment_t_t_c_n"
         tools:layout="@layout/fragment_t_t_c_n" />
     <fragment
         android:id="@+id/dichVu"
-        android:name="com.example.tsvid_ff.DichVu"
+        android:name="com.example.tsvid_ff.Fragment.ServicesFragment"
         android:label="fragment_dich_vu"
         tools:layout="@layout/fragment_dich_vu" />
     <fragment
         android:id="@+id/hoTro"
-        android:name="com.example.tsvid_ff.HoTro"
+        android:name="com.example.tsvid_ff.Fragment.SupportFragment"
         android:label="fragment_ho_tro"
         tools:layout="@layout/fragment_ho_tro" />
     <fragment
         android:id="@+id/traCuu"
-        android:name="com.example.tsvid_ff.TraCuu"
+        android:name="com.example.tsvid_ff.Fragment.ResearchFragment"
         android:label="fragment_tra_cuu"
         tools:layout="@layout/fragment_tra_cuu" />
     <fragment
         android:id="@+id/theSinhVien2"
-        android:name="com.example.tsvid_ff.TheSinhVien"
-        android:label="fragment_the_sinh_vien"
-        tools:layout="@layout/fragment_the_sinh_vien" />
+        android:name="com.example.tsvid_ff.Fragment.IDCardFragment"
+        android:label="fragment_the_sinh_vien" />
 </navigation>

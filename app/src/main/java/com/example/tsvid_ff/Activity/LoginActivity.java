@@ -6,10 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.util.Log;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,15 +15,10 @@ import com.example.tsvid_ff.Common.AccountCommon;
 import com.example.tsvid_ff.Common.ValidateData;
 import com.example.tsvid_ff.Database.DBContext;
 import com.example.tsvid_ff.Entity.Account;
-import com.example.tsvid_ff.Home;
+import com.example.tsvid_ff.Fragment.HomeFragment;
 import com.example.tsvid_ff.R;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
-import com.google.firebase.database.ChildEventListener;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
@@ -95,7 +87,7 @@ public class LoginActivity extends AppCompatActivity {
                             edt_noti_account.setError("Tài khoản không chính xác");
                             break;
                         case 0:
-                           startActivity(new Intent(LoginActivity.this, Home.class));
+                           startActivity(new Intent(LoginActivity.this, HomeFragment.class));
                             break;
                         case 1:
                             //login wiht admintranslator

@@ -1,4 +1,4 @@
-package com.example.tsvid_ff;
+package com.example.tsvid_ff.Fragment;
 
 import android.os.Bundle;
 
@@ -7,18 +7,19 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.tsvid_ff.R;
 
-public class TTCN extends Fragment {
+
+public class PersonInfoFragment extends Fragment {
 
 
-    public TTCN() {
+    public PersonInfoFragment() {
 
     }
 

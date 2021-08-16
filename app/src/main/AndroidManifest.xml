@@ -21,7 +21,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TSVID_FF.NoActionBar">
         <activity
-            android:name=".Home"
+            android:name=".Fragment.HomeFragment"
             android:exported="true"
             />
         <activity

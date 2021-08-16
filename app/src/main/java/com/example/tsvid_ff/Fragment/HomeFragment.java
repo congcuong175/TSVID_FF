@@ -1,5 +1,6 @@
-package com.example.tsvid_ff;
+package com.example.tsvid_ff.Fragment;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
@@ -14,8 +15,9 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
+import com.example.tsvid_ff.R;
 
-public class Home extends AppCompatActivity {
+public class HomeFragment extends AppCompatActivity {
 
     MeowBottomNavigation meowBottomNavigation;
     public Toolbar toolbar;
@@ -39,7 +41,7 @@ public class Home extends AppCompatActivity {
                 switch (item.getId()){
                     case 1:
                        navController.navigate(R.id.TTCN);
-                        toolbar.setTitle("QUẢNG LÝ CÁ NHÂN");
+                        toolbar.setTitle("QUẢN LÝ CÁ NHÂN");
                         break;
                     case 2:
                         navController.navigate(R.id.dichVu);
@@ -53,6 +55,9 @@ public class Home extends AppCompatActivity {
                         navController.navigate(R.id.hoTro);
                         toolbar.setTitle("TRUNG TÂM HỖ TRỢ");
                         break;
+                    default:
+                        break;
+
                 }
 
             }
@@ -79,5 +84,4 @@ public class Home extends AppCompatActivity {
             }
         });
     }
-
 }
