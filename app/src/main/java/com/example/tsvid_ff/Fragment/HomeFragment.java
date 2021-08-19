@@ -1,5 +1,7 @@
 package com.example.tsvid_ff.Fragment;
 
+import static com.example.tsvid_ff.Fragment.ServicesFragment.webView;
+
 import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -62,6 +64,7 @@ public class HomeFragment extends AppCompatActivity {
                 return null;
             }
         });
+        
         meowBottomNavigation.show(1,true);
         adads();
 
@@ -76,5 +79,16 @@ public class HomeFragment extends AppCompatActivity {
                 drawerLayout.openDrawer(GravityCompat.START);
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(webView.canGoBack()){
+            webView.goBack();
+        }
+        else {
+            super.onBackPressed();
+        }
+
     }
 }

@@ -13,7 +13,7 @@
         <LinearLayout
             android:layout_margin="20dp"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="220dp"
             android:orientation="vertical"
             android:weightSum="10">
             <LinearLayout
@@ -41,6 +41,7 @@
                         android:textSize="12sp"
                         android:textColor="@color/black"
                         android:gravity="center"
+                        android:fontFamily="@font/a"
                         android:text="BỘ GIÁO DỤC VÀ ĐÀO TẠO"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -49,6 +50,7 @@
 
                     <TextView
                         android:textSize="12sp"
+                        android:fontFamily="@font/a"
                         android:textColor="@color/black"
                         android:gravity="center_horizontal"
                         android:text="TRƯỜNG ĐẠI HỌC SPKT HƯNG YÊN"
@@ -85,6 +87,7 @@
                         android:textSize="11sp"
                         android:textColor="@color/black"
                         android:gravity="center"
+                        android:fontFamily="@font/a"
                         android:text="Mã SV: 10119096"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -105,6 +108,7 @@
                             android:gravity="center"
                             android:text="THẺ SINH VIÊN"
                             android:textColor="#D50000"
+                            android:fontFamily="@font/a"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"/>
                     </LinearLayout>
@@ -122,6 +126,7 @@
                             <TextView
                                 android:padding="3dp"
                                 android:textSize="12sp"
+                                android:fontFamily="@font/a"
                                 android:textColor="@color/black"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -129,6 +134,7 @@
                             <TextView
                                 android:padding="3dp"
                                 android:textSize="12sp"
+                                android:fontFamily="@font/a"
                                 android:textColor="@color/black"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -136,6 +142,7 @@
                             <TextView
                                 android:padding="3dp"
                                 android:textSize="12sp"
+                                android:fontFamily="@font/a"
                                 android:textColor="@color/black"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -143,6 +150,7 @@
                             <TextView
                                 android:padding="3dp"
                                 android:textSize="12sp"
+                                android:fontFamily="@font/a"
                                 android:textColor="@color/black"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -150,6 +158,8 @@
                             <TextView
                                 android:padding="3dp"
                                 android:textSize="12sp"
+                                android:fontFamily="@font/a"
+
                                 android:textColor="@color/black"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -163,12 +173,14 @@
                             <TextView
                                 android:padding="3dp"
                                 android:textSize="12sp"
+                                android:fontFamily="@font/a"
                                 android:textColor="@color/black"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="Đỗ Quang Hào"/>
                             <TextView
                                 android:padding="3dp"
+                                android:fontFamily="@font/a"
                                 android:textSize="12sp"
                                 android:textColor="@color/black"
                                 android:layout_width="match_parent"
@@ -176,6 +188,7 @@
                                 android:text="18/08/2001"/>
                             <TextView
                                 android:padding="3dp"
+                                android:fontFamily="@font/a"
                                 android:textSize="12sp"
                                 android:textColor="@color/black"
                                 android:layout_width="match_parent"
@@ -183,6 +196,7 @@
                                 android:text="Công nghệ thông tin"/>
                             <TextView
                                 android:padding="3dp"
+                                android:fontFamily="@font/a"
                                 android:textSize="12sp"
                                 android:textColor="@color/black"
                                 android:layout_width="match_parent"
@@ -191,6 +205,7 @@
                             <TextView
                                 android:padding="3dp"
                                 android:textSize="12sp"
+                                android:fontFamily="@font/a"
                                 android:textColor="@color/black"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -218,6 +233,7 @@
                         android:textSize="20dp"
                         android:text="Thẻ sinh viên"
                         android:gravity="center"
+                        android:fontFamily="@font/a"
                         android:id="@+id/tsv"
                         android:drawableStart="@drawable/idcard"
                         android:paddingLeft="10dp"

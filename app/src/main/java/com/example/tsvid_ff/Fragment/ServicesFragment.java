@@ -22,7 +22,7 @@ public class ServicesFragment extends Fragment {
 
 
     public ServicesFragment() {
-        // Required empty public constructor
+
     }
 
     @Override
@@ -33,15 +33,14 @@ public class ServicesFragment extends Fragment {
         container.setRotation(-0.00000000001f);
         return inflater.inflate(R.layout.fragment_dich_vu, container, false);
     }
-    WebView webView;
+    public static WebView webView;
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        NavController navController = Navigation.findNavController(view);
-
         webView=view.findViewById(R.id.web);
         webView.setWebViewClient(new WebViewClient());
         webView.getSettings().setJavaScriptEnabled(true);
         webView.loadUrl("http://qldaotao.utehy.edu.vn:81/TraCuuDiem/Index");
     }
+
 }

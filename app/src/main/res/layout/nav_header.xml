@@ -27,12 +27,14 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:textSize="25dp"
+        android:fontFamily="@font/a"
         android:textColor="@color/white"
         android:text="Họ Tên"
         />
     <TextView
         android:layout_width="match_parent"
         android:gravity="center"
+        android:fontFamily="@font/a"
         android:textColor="@color/white"
         android:layout_height="wrap_content"
         android:textSize="20dp"

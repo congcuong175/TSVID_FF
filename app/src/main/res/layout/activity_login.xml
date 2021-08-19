@@ -44,6 +44,7 @@
                     android:drawableStart="@drawable/accountonoff"
                     android:drawableLeft="@drawable/accountonoff"
                     android:drawablePadding="12dp"
+                    android:fontFamily="@font/a"
                     android:hint="Tài khoản"
                     android:inputType="textEmailAddress"
                     android:paddingStart="12dp"
@@ -71,6 +72,7 @@
                     android:paddingStart="12dp"
                     android:drawablePadding="12dp"
                     android:hint="Mật khẩu"
+                    android:fontFamily="@font/a"
                     android:inputType="textPassword"
                     android:drawableLeft="@drawable/keyon"
                     android:paddingLeft="12dp" />
@@ -87,6 +89,7 @@
                 android:id="@+id/btn_register_login"
                 android:layout_width="wrap_content"
                 android:layout_height="17dp"
+                android:fontFamily="@font/a"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentRight="true"
@@ -107,6 +110,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_alignParentBottom="true"
                 android:layout_marginTop="5dp"
+                android:fontFamily="@font/a"
                 android:layout_marginEnd="4dp"
                 android:layout_marginRight="4dp"
                 android:layout_marginBottom="32dp"
@@ -114,17 +118,24 @@
                 android:textColor="@color/teal_200" />
         </RelativeLayout>
     </LinearLayout>
-
+<androidx.cardview.widget.CardView
+    android:layout_width="150dp"
+    android:layout_marginTop="30dp"
+    app:cardCornerRadius="10dp"
+    android:layout_height="50dp">
     <TextView
         android:id="@+id/btn_login_login"
         android:layout_width="150dp"
         android:layout_height="50dp"
-        android:layout_marginTop="30dp"
+
         android:background="#FFC107"
         android:gravity="center"
         android:text="Đăng nhập"
+        android:fontFamily="@font/a"
         android:textColor="@color/black"
         android:textSize="20dp" />
+
+</androidx.cardview.widget.CardView>
 
     <ImageView
         android:id="@+id/btn_finger_login"
@@ -137,6 +148,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
+        android:fontFamily="@font/a"
         android:layout_marginBottom="40dp"
         android:textColor="@color/black"
         android:text="Điều khoản sử dụng"/>

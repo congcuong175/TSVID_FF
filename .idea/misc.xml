@@ -3,12 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Hao/Documents/GitHub/TSVID_FF/app/src/main/res/font/s.xml" value="0.21822916666666667" />
         <entry key="..\:/Users/Hao/Documents/GitHub/TSVID_FF/app/src/main/res/layout/activity_home.xml" value="0.20260416666666667" />
+        <entry key="..\:/Users/Hao/Documents/GitHub/TSVID_FF/app/src/main/res/layout/activity_login.xml" value="0.2828125" />
+        <entry key="..\:/Users/Hao/Documents/GitHub/TSVID_FF/app/src/main/res/layout/activity_main.xml" value="0.2828125" />
+        <entry key="..\:/Users/Hao/Documents/GitHub/TSVID_FF/app/src/main/res/layout/activity_register.xml" value="0.2828125" />
         <entry key="..\:/Users/Hao/Documents/GitHub/TSVID_FF/app/src/main/res/layout/fragment_dich_vu.xml" value="0.20260416666666667" />
         <entry key="..\:/Users/Hao/Documents/GitHub/TSVID_FF/app/src/main/res/layout/fragment_ho_tro.xml" value="0.20260416666666667" />
-        <entry key="..\:/Users/Hao/Documents/GitHub/TSVID_FF/app/src/main/res/layout/fragment_id_card.xml" value="0.25" />
-        <entry key="..\:/Users/Hao/Documents/GitHub/TSVID_FF/app/src/main/res/layout/fragment_t_t_c_n.xml" value="0.20260416666666667" />
-        <entry key="..\:/Users/Hao/Documents/GitHub/TSVID_FF/app/src/main/res/menu/activity_main_drawer.xml" value="0.20260416666666667" />
+        <entry key="..\:/Users/Hao/Documents/GitHub/TSVID_FF/app/src/main/res/layout/fragment_id_card.xml" value="0.5" />
+        <entry key="..\:/Users/Hao/Documents/GitHub/TSVID_FF/app/src/main/res/layout/fragment_t_t_c_n.xml" value="0.33" />
+        <entry key="..\:/Users/Hao/Documents/GitHub/TSVID_FF/app/src/main/res/layout/fragment_tra_cuu.xml" value="0.2828125" />
+        <entry key="..\:/Users/Hao/Documents/GitHub/TSVID_FF/app/src/main/res/layout/nav_header.xml" value="0.2828125" />
+        <entry key="..\:/Users/Hao/Documents/GitHub/TSVID_FF/app/src/main/res/menu/activity_main_drawer.xml" value="0.5" />
         <entry key="..\:/Users/hao/Documents/GitHub/TSVID_FF/app/src/main/res/drawable/account1.xml" value="0.37864583333333335" />
         <entry key="..\:/Users/hao/Documents/GitHub/TSVID_FF/app/src/main/res/drawable/accountonoff.xml" value="0.37864583333333335" />
         <entry key="..\:/Users/hao/Documents/GitHub/TSVID_FF/app/src/main/res/drawable/border_image.xml" value="0.37447916666666664" />
