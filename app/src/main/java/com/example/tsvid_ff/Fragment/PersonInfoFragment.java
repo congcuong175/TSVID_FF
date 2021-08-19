@@ -27,6 +27,7 @@ public class PersonInfoFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         return inflater.inflate(R.layout.fragment_t_t_c_n, container, false);
     }
 
@@ -39,7 +40,7 @@ public class PersonInfoFragment extends Fragment {
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                navController.navigate(R.id.theSinhVien2);
+                navController.navigate(R.id.IDCardFragment);
             }
         });
     }

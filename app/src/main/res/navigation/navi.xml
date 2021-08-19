@@ -25,7 +25,9 @@
         android:label="fragment_tra_cuu"
         tools:layout="@layout/fragment_tra_cuu" />
     <fragment
-        android:id="@+id/theSinhVien2"
+        android:id="@+id/IDCardFragment"
         android:name="com.example.tsvid_ff.Fragment.IDCardFragment"
-        android:label="fragment_the_sinh_vien" />
+        android:label="IDCardFragment"
+        tools:layout="@layout/fragment_id_card" />
+
 </navigation>

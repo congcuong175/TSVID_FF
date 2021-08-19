@@ -17,6 +17,9 @@ import android.widget.Toast;
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
 import com.example.tsvid_ff.R;
 
+import kotlin.Unit;
+import kotlin.jvm.functions.Function1;
+
 public class HomeFragment extends AppCompatActivity {
 
     MeowBottomNavigation meowBottomNavigation;
@@ -34,19 +37,19 @@ public class HomeFragment extends AppCompatActivity {
         meowBottomNavigation.add(new MeowBottomNavigation.Model(2, R.drawable.ic_baseline_assignment_24));
         meowBottomNavigation.add(new MeowBottomNavigation.Model(3, R.drawable.ic_baseline_search_24));
         meowBottomNavigation.add(new MeowBottomNavigation.Model(4, R.drawable.ic_baseline_support_agent_24));
-        meowBottomNavigation.setOnShowListener(new MeowBottomNavigation.ShowListener() {
+        meowBottomNavigation.setOnClickMenuListener(new Function1<MeowBottomNavigation.Model, Unit>() {
             @Override
-            public void onShowItem(MeowBottomNavigation.Model item) {
-
-                switch (item.getId()){
+            public Unit invoke(MeowBottomNavigation.Model model) {
+                switch (model.getId()){
                     case 1:
-                       navController.navigate(R.id.TTCN);
+                        navController.navigate(R.id.TTCN);
                         toolbar.setTitle("QUẢN LÝ CÁ NHÂN");
                         break;
                     case 2:
                         navController.navigate(R.id.dichVu);
                         toolbar.setTitle("DỊCH VỤ");
                         break;
+
                     case 3:
                         navController.navigate(R.id.traCuu);
                         toolbar.setTitle("TRA CỨU THÔNG TIN");
@@ -55,24 +58,14 @@ public class HomeFragment extends AppCompatActivity {
                         navController.navigate(R.id.hoTro);
                         toolbar.setTitle("TRUNG TÂM HỖ TRỢ");
                         break;
-                    default:
-                        break;
-
                 }
-
+                return null;
             }
         });
         meowBottomNavigation.show(1,true);
         adads();
-        meowBottomNavigation.setOnClickMenuListener(new MeowBottomNavigation.ClickListener() {
-            @Override
-            public void onClickItem(MeowBottomNavigation.Model item) {
-            }
-        });
 
     }
-
-
     public void adads() {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

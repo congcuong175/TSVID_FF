@@ -37,7 +37,6 @@ public class IDCardFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
        container.setRotation(90);
         container.setScaleX(1.3f);
         container.setScaleY(1.3f);

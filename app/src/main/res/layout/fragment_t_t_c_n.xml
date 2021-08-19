@@ -225,6 +225,12 @@
                         android:textStyle="bold"
                         android:layout_height="60dp"/>
                 </androidx.cardview.widget.CardView>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_height="3dp"
+                    android:background="@color/black"
+                    />
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     app:cardCornerRadius="30dp"
@@ -242,7 +248,12 @@
                         android:layout_height="60dp"/>
                 </androidx.cardview.widget.CardView>
 
-
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_height="3dp"
+                    android:background="@color/black"
+                    />
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
@@ -259,6 +270,12 @@
                         android:textStyle="bold"
                         android:layout_height="50dp"/>
                 </androidx.cardview.widget.CardView>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_height="3dp"
+                    android:background="@color/black"
+                    />
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     app:cardCornerRadius="30dp"
