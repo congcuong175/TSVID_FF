@@ -61,6 +61,9 @@ public class SupportFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+        container.setScaleX(0.99f);
+        container.setScaleY(0.99f);
+        container.setRotation(-0.00000000001f);
         return inflater.inflate(R.layout.fragment_ho_tro, container, false);
     }
 }

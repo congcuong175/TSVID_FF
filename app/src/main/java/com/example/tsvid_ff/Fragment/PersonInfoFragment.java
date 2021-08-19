@@ -27,7 +27,9 @@ public class PersonInfoFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
+        container.setScaleX(0.99f);
+        container.setScaleY(0.99f);
+        container.setRotation(-0.00000000001f);
         return inflater.inflate(R.layout.fragment_t_t_c_n, container, false);
     }
 

@@ -40,16 +40,16 @@ public class IDCardFragment extends Fragment {
        container.setRotation(90);
         container.setScaleX(1.3f);
         container.setScaleY(1.3f);
-        requireActivity().getOnBackPressedDispatcher().addCallback(getActivity(), new OnBackPressedCallback(true) {
-            @Override
-            public void handleOnBackPressed() {
-                NavController navController = Navigation.findNavController(getView());
-                navController.navigate(R.id.navi);
-                container.setScaleX(0.99f);
-                container.setScaleY(0.99f);
-                container.setRotation(-0.00000000001f);
-            }
-        });
+//        requireActivity().getOnBackPressedDispatcher().addCallback(getActivity(), new OnBackPressedCallback(true) {
+//            @Override
+//            public void handleOnBackPressed() {
+//                NavController navController = Navigation.findNavController(getView());
+//                navController.navigate(R.id.navi);
+//                container.setScaleX(0.99f);
+//                container.setScaleY(0.99f);
+//                container.setRotation(-0.00000000001f);
+//            }
+//        });
         return inflater.inflate(R.layout.fragment_id_card, container, false);
     }
 
