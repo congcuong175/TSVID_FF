@@ -2,6 +2,7 @@ package com.example.tsvid_ff.Fragment;
 
 import android.os.Bundle;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -31,6 +32,14 @@ public class ServicesFragment extends Fragment {
         container.setScaleX(0.99f);
         container.setScaleY(0.99f);
         container.setRotation(-0.00000000001f);
+        requireActivity().getOnBackPressedDispatcher().addCallback(getActivity(), new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                if(webView.canGoBack()){
+                    webView.goBack();
+                }
+            }
+        });
         return inflater.inflate(R.layout.fragment_dich_vu, container, false);
     }
     public static WebView webView;

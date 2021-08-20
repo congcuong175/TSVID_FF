@@ -1,6 +1,5 @@
 package com.example.tsvid_ff.Fragment;
 
-import static com.example.tsvid_ff.Fragment.ServicesFragment.webView;
 
 import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
@@ -81,14 +80,5 @@ public class HomeFragment extends AppCompatActivity {
         });
     }
 
-    @Override
-    public void onBackPressed() {
-        if(webView.canGoBack()){
-            webView.goBack();
-        }
-        else {
-            super.onBackPressed();
-        }
 
-    }
 }
