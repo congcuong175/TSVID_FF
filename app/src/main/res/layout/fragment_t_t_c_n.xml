@@ -262,7 +262,7 @@
                         android:gravity="center"
                         android:fontFamily="@font/a"
                         android:id="@+id/thoikhoabieu"
-                        android:drawableStart="@drawable/idcard"
+                        android:drawableStart="@drawable/tkb"
                         android:paddingLeft="10dp"
                         android:textColor="@color/black"
                         android:textStyle="bold"
