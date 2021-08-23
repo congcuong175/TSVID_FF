@@ -51,5 +51,4 @@ public class ServicesFragment extends Fragment {
         webView.getSettings().setJavaScriptEnabled(true);
         webView.loadUrl("http://qldaotao.utehy.edu.vn:81/TraCuuDiem/Index");
     }
-
 }

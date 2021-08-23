@@ -29,5 +29,10 @@
         android:name="com.example.tsvid_ff.Fragment.IDCardFragment"
         android:label="IDCardFragment"
         tools:layout="@layout/fragment_id_card" />
+    <fragment
+        android:id="@+id/thoikhoabieu2"
+        android:name="com.example.tsvid_ff.thoikhoabieu"
+        android:label="fragment_thoikhoabieu"
+        tools:layout="@layout/fragment_thoikhoabieu" />
 
 </navigation>

@@ -258,9 +258,14 @@
                         android:layout_width="match_parent"
                         android:background="@color/ic_launcher_background"
                         android:textSize="20dp"
+                        android:text="Thời khóa biểu"
+                        android:gravity="center"
+                        android:fontFamily="@font/a"
+                        android:id="@+id/thoikhoabieu"
+                        android:drawableStart="@drawable/idcard"
+                        android:paddingLeft="10dp"
                         android:textColor="@color/black"
                         android:textStyle="bold"
-                        android:text=""
                         android:layout_height="60dp"/>
                 </androidx.cardview.widget.CardView>
 

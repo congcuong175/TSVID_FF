@@ -33,7 +33,7 @@ public class PersonInfoFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_t_t_c_n, container, false);
     }
 
-    TextView textView;
+    TextView textView,textView1;
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -43,6 +43,13 @@ public class PersonInfoFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 navController.navigate(R.id.IDCardFragment);
+            }
+        });
+        textView1=view.findViewById(R.id.thoikhoabieu);
+        textView1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                navController.navigate(R.id.thoikhoabieu2);
             }
         });
     }
