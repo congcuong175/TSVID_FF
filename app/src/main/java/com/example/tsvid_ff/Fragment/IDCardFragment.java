@@ -45,9 +45,6 @@ public class IDCardFragment extends Fragment {
             public void handleOnBackPressed() {
                 NavController navController = Navigation.findNavController(getView());
                 navController.navigate(R.id.navi);
-                container.setScaleX(0.99f);
-                container.setScaleY(0.99f);
-                container.setRotation(-0.00000000001f);
             }
         });
         return inflater.inflate(R.layout.fragment_id_card, container, false);
