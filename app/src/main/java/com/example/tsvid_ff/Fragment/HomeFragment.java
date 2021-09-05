@@ -37,7 +37,6 @@ public class HomeFragment extends AppCompatActivity {
     MeowBottomNavigation meowBottomNavigation;
     public Toolbar toolbar;
     DrawerLayout drawerLayout;
-    ImageView imv2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,10 +76,6 @@ public class HomeFragment extends AppCompatActivity {
                 return null;
             }
         });
-
-        imv2=findViewById(R.id.img_capture_ttcn);
-        Picasso.get().load(Uri.parse(acc.getImage())).into(imv2);
-
 
         meowBottomNavigation.show(1,true);
         adads();

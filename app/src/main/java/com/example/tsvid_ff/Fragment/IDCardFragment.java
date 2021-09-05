@@ -55,11 +55,8 @@ public class IDCardFragment extends Fragment {
             public void handleOnBackPressed() {
                 NavController navController = Navigation.findNavController(getView());
                 navController.navigate(R.id.navi);
-
             }
         });
-
-
         return inflater.inflate(R.layout.fragment_id_card, container, false);
     }
 
@@ -67,8 +64,6 @@ public class IDCardFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         ImageView imv1= view.findViewById(R.id.img_capture_idcard);
-
         Picasso.get().load(Uri.parse(acc.getImage())).into(imv1);
-
     }
 }

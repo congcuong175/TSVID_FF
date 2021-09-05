@@ -1,5 +1,8 @@
 package com.example.tsvid_ff.Fragment;
 
+import static com.example.tsvid_ff.Common.AccountCommon.acc;
+
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -11,9 +14,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.tsvid_ff.R;
+import com.squareup.picasso.Picasso;
 
 
 public class PersonInfoFragment extends Fragment {
@@ -52,6 +57,8 @@ public class PersonInfoFragment extends Fragment {
                 navController.navigate(R.id.thoikhoabieu2);
             }
         });
+        ImageView imv1= view.findViewById(R.id.img_capture_ttcn);
+        Picasso.get().load(Uri.parse(acc.getImage())).into(imv1);
     }
 
 }
