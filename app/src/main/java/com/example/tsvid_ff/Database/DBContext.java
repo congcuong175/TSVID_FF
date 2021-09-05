@@ -26,6 +26,31 @@ import java.util.List;
 
 public class DBContext{
     int kt;
+    Account ac;
+    public Account getAccount(String id)
+    {
+
+        DatabaseReference db=FirebaseDatabase.getInstance().getReference().child("Account");
+        db.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot snapshot1:snapshot.getChildren())
+                {
+                    if(snapshot1.getValue(Account.class).getId().equalsIgnoreCase(id))
+                    {
+                        ac = snapshot1.getValue(Account.class);
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+        return ac;
+
+    }
     public ArrayList<Account> getDataAccount()
     {
         ArrayList<Account> accounts=new ArrayList<>();

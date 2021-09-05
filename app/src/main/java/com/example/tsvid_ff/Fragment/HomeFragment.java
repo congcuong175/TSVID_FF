@@ -1,7 +1,12 @@
 package com.example.tsvid_ff.Fragment;
 
 
+import static com.example.tsvid_ff.Activity.LoginActivity.dbContext;
+import static com.example.tsvid_ff.Common.AccountCommon.ID_ACCOUNT;
+
 import androidx.activity.OnBackPressedCallback;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
@@ -11,26 +16,33 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
+import com.example.tsvid_ff.Entity.Account;
 import com.example.tsvid_ff.R;
+import com.squareup.picasso.Picasso;
 
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
+import static com.example.tsvid_ff.Common.AccountCommon.acc;
 
 public class HomeFragment extends AppCompatActivity {
 
     MeowBottomNavigation meowBottomNavigation;
     public Toolbar toolbar;
     DrawerLayout drawerLayout;
+    ImageView imv2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
         meowBottomNavigation=findViewById(R.id.a1);
         drawerLayout = findViewById(R.id.drawer_layout);
         toolbar = findViewById(R.id.tb);
@@ -46,6 +58,7 @@ public class HomeFragment extends AppCompatActivity {
                     case 1:
                         navController.navigate(R.id.TTCN);
                         toolbar.setTitle("QUẢN LÝ CÁ NHÂN");
+
                         break;
                     case 2:
                         navController.navigate(R.id.dichVu);
@@ -64,9 +77,15 @@ public class HomeFragment extends AppCompatActivity {
                 return null;
             }
         });
-        
+
+        imv2=findViewById(R.id.img_capture_ttcn);
+        Picasso.get().load(Uri.parse(acc.getImage())).into(imv2);
+
+
         meowBottomNavigation.show(1,true);
         adads();
+
+
 
     }
 
@@ -84,9 +103,10 @@ public class HomeFragment extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 drawerLayout.openDrawer(GravityCompat.START);
+
+
             }
         });
     }
-
 
 }
