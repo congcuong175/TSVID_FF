@@ -20,6 +20,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -32,11 +33,15 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import static com.example.tsvid_ff.Common.AccountCommon.acc;
 
+import java.util.ArrayList;
+
 public class HomeFragment extends AppCompatActivity {
 
     MeowBottomNavigation meowBottomNavigation;
     public Toolbar toolbar;
     DrawerLayout drawerLayout;
+    ArrayList<String> arrayList;
+   public static ArrayAdapter<String>arrayAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -81,7 +86,14 @@ public class HomeFragment extends AppCompatActivity {
         adads();
 
 
-
+        arrayList=new ArrayList<>();
+        arrayList.add("Tuần 1");
+        arrayList.add("Tuần 2");
+        arrayList.add("Tuần 3");
+        arrayList.add("Tuần 4");
+        arrayList.add("Tuần 5");
+        arrayList.add("Tuần 6");
+        arrayAdapter=new ArrayAdapter<>(getApplicationContext(),R.layout.texttuanhoc,arrayList);
     }
 
     @Override

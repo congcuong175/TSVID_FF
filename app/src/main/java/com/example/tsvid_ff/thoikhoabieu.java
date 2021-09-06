@@ -1,5 +1,7 @@
 package com.example.tsvid_ff;
 
+import static com.example.tsvid_ff.Fragment.HomeFragment.arrayAdapter;
+
 import android.graphics.Color;
 import android.os.Bundle;
 
@@ -13,11 +15,16 @@ import androidx.navigation.Navigation;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.LinearLayout;
 
 import com.example.tsvid_ff.Fragment.HomeFragment;
+import com.google.android.material.textfield.TextInputLayout;
 
 import org.jetbrains.annotations.NotNull;
+
+import java.util.ArrayList;
 
 
 public class thoikhoabieu extends Fragment {
@@ -27,7 +34,8 @@ public class thoikhoabieu extends Fragment {
         // Required empty public constructor
     }
     HomeFragment mainActivity = (HomeFragment) getActivity();
-
+    TextInputLayout textInputLayout;
+    AutoCompleteTextView autoCompleteTextView;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -42,8 +50,12 @@ public class thoikhoabieu extends Fragment {
 
     }
     @Override
-    public void onViewCreated(@NonNull @NotNull View view, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
+    public void onViewCreated(@NonNull  View view, @Nullable  Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        textInputLayout=view.findViewById(R.id.a1);
+        autoCompleteTextView=view.findViewById(R.id.autoCompleteTextView);
+        autoCompleteTextView.setAdapter(arrayAdapter);
+        autoCompleteTextView.setThreshold(1);
         mau=view.findViewById(R.id.mau);
         mau1=view.findViewById(R.id.mau1);
         mau2=view.findViewById(R.id.mau2);
