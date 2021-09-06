@@ -1,8 +1,28 @@
 package com.example.tsvid_ff.Entity;
 
 public class Account {
-    private String id, password, name, faculty, classroom, scholastic, image;
+    private String id, password,datetime, name, faculty, classroom, scholastic, image;
     private String permission;
+
+    public Account(String id, String password, String datetime, String name, String faculty, String classroom, String scholastic, String permission, String image) {
+        this.id = id;
+        this.password = password;
+        this.datetime = datetime;
+        this.name = name;
+        this.faculty = faculty;
+        this.classroom = classroom;
+        this.scholastic = scholastic;
+        this.image = image;
+        this.permission = permission;
+    }
+
+    public String getDatetime() {
+        return datetime;
+    }
+
+    public void setDatetime(String datetime) {
+        this.datetime = datetime;
+    }
 
     public String getId() {
         return id;
@@ -70,15 +90,5 @@ public class Account {
 
     public Account(){
 
-    }
-    public Account(String id, String password, String name, String faculty, String classroom, String scholastic,String permission, String image) {
-        this.id = id;
-        this.password = password;
-        this.name = name;
-        this.faculty = faculty;
-        this.classroom = classroom;
-        this.scholastic = scholastic;
-        this.image = image;
-        this.permission = permission;
     }
 }

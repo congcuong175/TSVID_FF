@@ -23,7 +23,8 @@ import com.squareup.picasso.Picasso;
 
 public class PersonInfoFragment extends Fragment {
 
-
+    TextView tvName,tvDate,tvFaculty,tvScholastic,tvId,tvClassroom;
+    ImageView imv1;
     public PersonInfoFragment() {
 
     }
@@ -57,8 +58,24 @@ public class PersonInfoFragment extends Fragment {
                 navController.navigate(R.id.thoikhoabieu2);
             }
         });
-        ImageView imv1= view.findViewById(R.id.img_capture_ttcn);
+        Init(view);
+
+    }
+    private void Init(View view)
+    {
+        imv1= view.findViewById(R.id.img_capture_ttcn);
+        tvName=view.findViewById(R.id.tv_name_ttcn);
+        tvDate=view.findViewById(R.id.tv_date_ttcn);
+        tvFaculty=view.findViewById(R.id.tv_faculty_ttcn);
+        tvScholastic=view.findViewById(R.id.tv_scholastic_ttcn);
+        tvId=view.findViewById(R.id.tv_id_ttcn);
+        tvClassroom=view.findViewById(R.id.tv_classroom_ttcn);
+        tvId.setText("Mã SV: "+acc.getId());
+        tvName.setText(acc.getName());
+        tvDate.setText(acc.getDatetime());
+        tvFaculty.setText(acc.getFaculty());
+        tvScholastic.setText(acc.getScholastic());
+        tvClassroom.setText(acc.getClassroom());
         Picasso.get().load(Uri.parse(acc.getImage())).into(imv1);
     }
-
 }

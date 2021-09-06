@@ -33,7 +33,8 @@ import static com.example.tsvid_ff.Common.AccountCommon.acc;
 
 public class IDCardFragment extends Fragment {
 
-
+    TextView tvName,tvDate,tvFaculty,tvScholastic,tvId,tvClassroom;
+    ImageView imv1;
     public IDCardFragment() {
 
     }
@@ -63,7 +64,23 @@ public class IDCardFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        ImageView imv1= view.findViewById(R.id.img_capture_idcard);
+        Init(view);
+    }
+    private void Init(View view)
+    {
+        imv1= view.findViewById(R.id.img_capture_idcard);
+        tvName=view.findViewById(R.id.tv_name_idcard);
+        tvDate=view.findViewById(R.id.tv_date_idcard);
+        tvFaculty=view.findViewById(R.id.tv_faculty_idcard);
+        tvScholastic=view.findViewById(R.id.tv_scholastic_idcard);
+        tvId=view.findViewById(R.id.tv_id_idcard);
+        tvClassroom=view.findViewById(R.id.tv_classroom_idcard);
+        tvId.setText("Mã SV: "+acc.getId());
+        tvName.setText(acc.getName());
+        tvDate.setText(acc.getDatetime());
+        tvFaculty.setText(acc.getFaculty());
+        tvScholastic.setText(acc.getScholastic());
+        tvClassroom.setText(acc.getClassroom());
         Picasso.get().load(Uri.parse(acc.getImage())).into(imv1);
     }
 }

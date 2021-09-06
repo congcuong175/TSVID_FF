@@ -145,7 +145,7 @@ public class RegisterActivity extends AppCompatActivity {
                                     @Override
                                     public void onSuccess(Uri uri) {
                                         namePicture= uri.toString();
-                                        Account account = new Account(edt_tip_masv.getText().toString(), edt_tip_masv.getText().toString(), edt_tip_hoten.getText().toString(), edt_tip_nganhhoc.getText().toString(), edt_tip_lop.getText().toString(), edt_tip_khoahoc.getText().toString(),"false", namePicture);
+                                        Account account = new Account(edt_tip_masv.getText().toString(), edt_tip_masv.getText().toString(),edt_tip_ngaysinh.getText().toString(), edt_tip_hoten.getText().toString(), edt_tip_nganhhoc.getText().toString(), edt_tip_lop.getText().toString(), edt_tip_khoahoc.getText().toString(),"false", namePicture);
                                         dbContext.addAccount(account,getApplicationContext());
                                     }
                                 });

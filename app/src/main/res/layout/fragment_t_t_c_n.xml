@@ -85,6 +85,7 @@
                             android:layout_height="match_parent"/>
                     </LinearLayout>
                     <TextView
+                        android:id="@+id/tv_id_ttcn"
                         android:textSize="11sp"
                         android:textColor="@color/black"
                         android:gravity="center"
@@ -172,6 +173,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent">
                             <TextView
+                                android:id="@+id/tv_name_ttcn"
                                 android:padding="3dp"
                                 android:textSize="12sp"
                                 android:fontFamily="@font/a"
@@ -180,6 +182,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="Đỗ Quang Hào"/>
                             <TextView
+                                android:id="@+id/tv_date_ttcn"
                                 android:padding="3dp"
                                 android:fontFamily="@font/a"
                                 android:textSize="12sp"
@@ -188,6 +191,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="18/08/2001"/>
                             <TextView
+                                android:id="@+id/tv_faculty_ttcn"
                                 android:padding="3dp"
                                 android:fontFamily="@font/a"
                                 android:textSize="12sp"
@@ -196,6 +200,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="Công nghệ thông tin"/>
                             <TextView
+                                android:id="@+id/tv_classroom_ttcn"
                                 android:padding="3dp"
                                 android:fontFamily="@font/a"
                                 android:textSize="12sp"
@@ -204,6 +209,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="TK 17.5"/>
                             <TextView
+                                android:id="@+id/tv_scholastic_ttcn"
                                 android:padding="3dp"
                                 android:textSize="12sp"
                                 android:fontFamily="@font/a"

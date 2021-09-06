@@ -68,7 +68,7 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         });
-        AccountCommon accountCommon=new AccountCommon();
+
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
